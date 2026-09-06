@@ -16,6 +16,20 @@ public class PullAction : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false; //引っ張っていなければ非表示
+
+        //if(PlayerStatus.Instance != null)
+        //{
+        //    transform.localScale = Vector3.one * PlayerStatus.Instance.characterScale; //キャラクターの大きさをPlayerStatusから取得して設定
+
+        //    if(PlayerStatus.Instance.isPenetration)
+        //    {
+        //       Collider2D collider = GetComponent<Collider2D>();
+        //        if(collider != null)
+        //        {
+        //            collider.isTrigger = true; //貫通する場合はトリガーに設定
+        //        }
+        //    }
+        //}
     }
 
     void Update()

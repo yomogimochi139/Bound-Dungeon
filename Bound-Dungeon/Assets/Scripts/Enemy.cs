@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("‘Ì—Í")]
-    [SerializeField] private int hp = 5;
+    [SerializeField] private float hp = 5f;
 
     [Header("ˆÚ“®")]
     [SerializeField] private EnemyMoveAxis enemyAxis = EnemyMoveAxis.X;
@@ -45,11 +45,26 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-           hp--;
-           if (hp <= 0)
-            {
-                Destroy(gameObject);
-            }
+           TakeDamage();
         }
     }   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            TakeDamage();
+        }
+    }
+
+    private void TakeDamage()
+    {
+        //float damage = (PlayerStatus.Instance != null) ? PlayerStatus.Instance.attackPoint : 1f;
+        //hp -= damage;
+        hp--;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

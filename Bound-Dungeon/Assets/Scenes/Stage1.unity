@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42a16d849af9954b8a80cbddadbb602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  nextSceneName: stage2
+  StatusUpPanel: {fileID: 612548218}
   GameOverPanel: {fileID: 595349440}
 --- !u!4 &163035
 Transform:
@@ -177,8 +177,9 @@ GameObject:
   - component: {fileID: 88594997}
   - component: {fileID: 88594996}
   - component: {fileID: 88594995}
+  - component: {fileID: 88594998}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +248,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 88594996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 88594998}
+        m_TargetAssemblyTypeName: StatusUpButton, Assembly-CSharp
+        m_MethodName: OnSelectStatusUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &88594996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +299,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88594993}
   m_CullTransparentMesh: 1
+--- !u!114 &88594998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88594993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004da9676cc1463489d788eb2bfdb8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatusUpButton
+  StatusType: 1
+  nextSceneName: stage2
 --- !u!1 &340604266
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +688,7 @@ GameObject:
   - component: {fileID: 443851955}
   - component: {fileID: 443851954}
   - component: {fileID: 443851953}
+  - component: {fileID: 443851956}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -731,7 +759,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443851954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 443851956}
+        m_TargetAssemblyTypeName: StatusUpButton, Assembly-CSharp
+        m_MethodName: OnSelectStatusUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &443851954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +810,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443851951}
   m_CullTransparentMesh: 1
+--- !u!114 &443851956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443851951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004da9676cc1463489d788eb2bfdb8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatusUpButton
+  StatusType: 2
+  nextSceneName: stage2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,7 +1068,7 @@ GameObject:
   - component: {fileID: 612548221}
   - component: {fileID: 612548220}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: StatusUpPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1851,6 +1905,7 @@ GameObject:
   - component: {fileID: 1381384842}
   - component: {fileID: 1381384843}
   - component: {fileID: 1381384844}
+  - component: {fileID: 1381384845}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2119,6 +2174,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1381384845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381384837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efdf641640d6564f8a3aaad4c3d371d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStatus
+  attackPoint: 1
+  characterScale: 1
+  isPenetration: 0
 --- !u!1 &1430388109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,6 +2489,7 @@ GameObject:
   - component: {fileID: 1589280658}
   - component: {fileID: 1589280657}
   - component: {fileID: 1589280656}
+  - component: {fileID: 1589280659}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2489,7 +2560,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1589280657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589280659}
+        m_TargetAssemblyTypeName: StatusUpButton, Assembly-CSharp
+        m_MethodName: OnSelectStatusUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1589280657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,6 +2611,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589280654}
   m_CullTransparentMesh: 1
+--- !u!114 &1589280659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589280654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004da9676cc1463489d788eb2bfdb8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatusUpButton
+  StatusType: 0
+  nextSceneName: stage2
 --- !u!1 &1641348807
 GameObject:
   m_ObjectHideFlags: 0
