@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum EnemyMoveAxis
-    {
-        X,
-        Y
-    }
-
     [Header("‘Ì—Í")]
     [SerializeField] private int hp = 5;
 
@@ -15,6 +9,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyMoveAxis enemyAxis = EnemyMoveAxis.X;
     [SerializeField] private float enemyspeed = 1.5f;
     [SerializeField] private float moveDistance = 2f;
+
+    public enum EnemyMoveAxis
+    {
+        None,
+        X,
+        Y
+    }
 
     private Vector3 startPosition;
 
@@ -25,6 +26,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+
+        if(enemyAxis == EnemyMoveAxis.None) return;
+
         float offset = Mathf.PingPong(Time.time * enemyspeed, moveDistance);
 
         if(enemyAxis == EnemyMoveAxis.X)
